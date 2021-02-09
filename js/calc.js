@@ -1,14 +1,15 @@
 const getElements = document.querySelectorAll('.product');
 
+let price;
+
 for (const product of getElements) {
     product.onclick = function () {
-        const price = product.querySelector('.product__price').textContent;
-
+        price = product.querySelector('.product__price').textContent;
         return price;
     }
 }
 
-console.log();
+console.log(price);
 
 // const printPrice = function (elementPrice) {
 //     const resultWindow = document.querySelector('.calc_field');
