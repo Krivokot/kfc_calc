@@ -9,6 +9,7 @@ const makeElement = function (tagName, className, text) {
 
   const createCard = function (product) {
     let listItem = makeElement('li', 'product');
+    
 
     let title = makeElement('h2', 'product__title', product.text);
     listItem.appendChild(title);
@@ -22,6 +23,7 @@ const makeElement = function (tagName, className, text) {
 
     let price = makeElement('p', 'product__price', product.price);
     listItem.appendChild(price);
+    listItem.value = price.textContent;
 
     let availabilityClass = 'product--available';
     if (!product.isAvailable) {
@@ -44,3 +46,5 @@ const makeElement = function (tagName, className, text) {
     let cardItem = createCard(cardsData[i]);
     cardList.appendChild(cardItem);
   }
+
+  console.log(cardList);
